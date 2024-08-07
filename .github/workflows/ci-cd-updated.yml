@@ -78,7 +78,7 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
-            docker pull ${{ secrets.DOCKER_USERNAME }}/my-portfolio:latest
+            docker pull ${{ secrets.DOCKER_USERNAME }}/portfolio:latest
             docker stop portfolio || true
             docker rm portfolio || true
             docker run -d --name portfolio -p 80:80 ${{ secrets.DOCKER_USERNAME }}/portfolio:latest
